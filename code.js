@@ -27,73 +27,78 @@ TOEIC Part 7の後半に相当する、複数文書を用いた長文読解問�
 今回生成する${problemNum}問の設問の正解は、必ず
 ${answerStr}
 の順番・内容になるようにしてください。
-（例：3問の場合「D, C, D」と指定されたら、1問目の正解はD、2問目はC、3問目はDにしてください）
+（例：問題数が5問で、正解が「C, C, D, B, D」と指定されたら、1問目の正解はC、2問目はC、3問目はD、4問目はB、5問目はDにしてください）
 
 【出力形式】
 必ず下記の出力例と全く同じ形式で出力してください。
 余計な説明や補足は一切不要です。
 ---（半角ハイフン3つ）で区切り、
-1つ目のブロックに複数文書（文書が複数の場合は文書間を「==============」で区切ること）、
+1つ目のブロックに複数文書（文書が複数の場合は必ず文書間を「==============」で区切ること）、
 2つ目以降のブロックに各設問（「1. 問題文」から「D.」まで）、
 最後のブロックに正解（A/B/C/Dを1行ずつ）を出力してください。
+ブロックは必ず「---」で区切ること。
 
-【出力例（回答がD, C, Dの場合）】
-Subject: Urgent Recall Notice - "AquaPure" Water Filter
+【出力例（回答がC, C, D, B, Dの場合）】
+Subject: Follow-up on Vendor Fair Booth Setup
+From: Clara Healy <clara.healy@harmonypublishing.com>
+To: All Marketing Team Members
+Date: June 7
 
-Dear Valued Customer,
+Dear Team,
 
-Due to a manufacturing defect affecting a limited batch of our AquaPure water filters (model APF-1200, serial numbers starting with X2347), we are initiating an urgent product recall.  Filters from this batch may contain microscopic particles that could potentially contaminate drinking water.  If you own an AquaPure APF-1200 filter with a serial number beginning with X2347, please cease using it immediately. You can find the serial number printed on the filter's base.
+Thank you again for your efforts in preparing for next week’s Vendor Fair. Please ensure that all promotional materials, including the new line of eco-friendly bookmarks and sample copies of our summer releases, are shipped to the venue by Monday at noon. The event staff will begin booth setup at 2:00 p.m., and delays may result in losing our reserved location.
 
-For a full refund or replacement, please visit our website at www.aquapurefilters.com/recall and complete the online form, providing your serial number and proof of purchase. You can also call our customer service hotline at 555-1212.  The recall process is expected to take no longer than 7 business days.
+Also, for those volunteering to assist with setup, please arrive at the convention center by 1:30 p.m. sharp. A short orientation will be conducted in the lobby. Lastly, don’t forget that the revised schedule of author signings is now posted on the shared drive under “VendorFair2025.” Please review it and let me know if there are any conflicts with your assigned tasks.
 
-We sincerely apologize for any inconvenience this may cause and appreciate your prompt attention to this matter.
-
-Sincerely,
-The AquaPure Team
-
-==============
-
-AquaPure Water Filter Review: 5 Stars!
-
-This filter is amazing!  The water tastes so much better than before. I've used it for over 6 months now, and it's still working like a charm. The flow rate is excellent, and it’s really easy to install. I highly recommend it. -Sarah J.
+Best,
+Clara
 
 ==============
+Title: Vendor Fair Kicks Off Next Week with a Focus on Sustainability
+Published by: The City Herald
+Date: June 7
 
-AquaPure APF-1200 Water Filter - Unbeatable Value!
+The annual Vendor Fair at the Midtown Convention Center is set to begin next Tuesday, featuring over 120 local businesses. This year’s theme is “Sustainability in Business,” highlighting eco-conscious products and practices. Attendees can look forward to free samples, interactive exhibits, and author signings.
 
-**Features:**
+Event coordinator Jeremy Lin noted that several publishing companies are expected to present new titles and green-themed promotional items. “We’ve received confirmation from Harmony Publishing, among others, who are showcasing a new line of biodegradable bookmarks,” said Lin.
 
-* Superior Filtration
-* High Flow Rate
-* Easy Installation
-* Long-lasting Cartridge
-
-Get yours today! www.aquapurefilters.com
-
+The event will open to the public at 10:00 a.m. on Tuesday, with setup allowed only on Monday afternoon. Author signings will be spread across all three days of the fair, with final timing updates posted on the event app this Friday.
 
 ---
-1.  What is the primary reason for the AquaPure water filter recall?
-A.  The filters are leaking.
-B.  The filters are not compatible with all plumbing systems.
-C.  The filters have a design flaw that reduces water flow.
-D.  The filters may contain contaminants.
+1.  What is the most likely reason Clara asked the team to send materials by noon on Monday?
+A.  Because she wants time to double-check the contents
+B.  Because volunteers need them for the orientation session
+C.  Because the venue starts allowing setup in the afternoon
+D.  Because the author signings start right after setup
 ---
-2.  According to the customer review, what is a positive aspect of the AquaPure APF-1200 water filter?
-A.  It has a unique and stylish design.
-B.  It is inexpensive compared to competitors.
-C.  It provides superior water taste and flow.
-D.  It is easy to clean and maintain.
+2.  According to both documents, what is true about Harmony Publishing’s participation?
+A.  They will distribute a new set of printed catalogues
+B.  They will be one of the event’s primary sponsors
+C.  They will present items aligned with the fair’s theme
+D.  They will offer early access to summer releases online
 ---
-3.  What information is missing from the recall notice that is mentioned in the product advertisement?
-A.  The filter's dimensions and weight.
-B.  The length of the filter’s warranty.
-C.  The lifespan of the filter cartridge.
-D. The retail price of the water filter.
-
-
+3.  Which task requires access to the shared drive?
+A.  Sending promotional materials
+B.  Confirming arrival times for volunteers
+C.  Checking booth layout
+D.  Reviewing the author signing schedule
 ---
-D
+4.  What can be inferred about the event’s schedule?
+A.  Author signings will begin on Monday
+B.  Setup is only permitted during a specific time
+C.  Book sales will not take place on the first day
+D.  The orientation will last several hours
+---
+5.  Based on the information provided, what is one possible risk for Harmony Publishing?
+A.  Having their products removed by the event staff
+B.  Having a smaller booth than planned
+C.  Being unable to participate in author signings
+D.  Being reassigned to a different booth space
+---
 C
+C
+D
+B
 D
 ---`;
 
@@ -132,8 +137,12 @@ D
     if (split.length >= 3) {
       // 設問部分を---で分割し、各設問ごとに抽出
       questionBlocks = split.slice(1, split.length - 1).map(s => s.trim()).filter((s, idx) => idx < problemNum);
+      // 不足している場合は空文字で埋める
+      while (questionBlocks.length < problemNum) questionBlocks.push('');
       // 最後の---以降が正解
       answerLines = split[split.length - 1].trim().split('\n').filter(l => l.match(/^[A-D]$/));
+      // 不足している場合は空文字で埋める
+      while (answerLines.length < problemNum) answerLines.push('');
     }
 
     // ★ Geminiの出力をコンソール（Logger）に表示
@@ -201,9 +210,10 @@ function onFormSubmit(e) {
   // e.valuesの中身をLoggerで確認
   Logger.log(JSON.stringify(e.values));
 
-  // 例: [タイムスタンプ, メール, Q1, Q2, Q3] の場合
+  // 例: [タイムスタンプ, メール, Q1, Q2, ...] の場合
   const email = e.values[1];
-  const userAnswers = [e.values[2], e.values[3], e.values[4]];
+  // 2列目（index=1）がメール、それ以降が解答
+  const userAnswers = e.values.slice(2);
 
   // 正解取得（answersシートの最新行＝ans[]）
   const answersSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('answers');
@@ -245,8 +255,10 @@ feedbackPrompt += `
 ・本文の和訳（対訳形式で）
 ・難易度の高い語彙とその日本語解説
 を日本語でまとめてください。
-【重要】単なる解説ではなく、「あなたの回答」を分析した個別のアドバイスになるよう注意してください。
-出力は必ずHTML形式（h2, strong, ul, li, p など）で返してください。マークダウンは使わないでください。`;
+【重要】
+・単なる解説ではなく、「あなたの回答」を分析した個別のアドバイスになるよう注意してください。
+・出力は必ずHTML形式（h2, strong, ul, li, p など）で返してください。マークダウンは使わないでください。
+・適切に改行を行い、解説が見やすいようにしてください。`;
 
   // Gemini API呼び出し
   const apiKey = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('setting').getRange('B1').getValue();

@@ -1,0 +1,27 @@
+# テスト用・ローカル専用ファイル
+test.js
+
+# macOS固有ファイル
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# VSCodeやJetBrains系エディタ
+.vscode/
+.idea/
+
+# Apps Scriptの一時ファイルやバックアップ
+*.gs~ 
+*.bak
+
+# node_modules（将来npmを使う場合）
+node_modules/
+
+# その他不要な一時ファイル
+*.log
